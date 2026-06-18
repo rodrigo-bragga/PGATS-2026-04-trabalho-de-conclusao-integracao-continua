@@ -1,0 +1,32 @@
+# Nome da pipeline
+name: Pipeline de Conclusao do Curso
+
+# Gatilhos - Execução por push
+on:
+  push:
+    branches:
+      - main
+
+# Manual
+  workflow_dispatch:
+
+# Agendado
+  schedule:
+    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite
+
+#tarefas dentro da pipeline = jobs
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Executando testes do Mocha
+        run: npm run test:ci
+        if: always() # Garante que o passo rode mesmo se o teste falhar
+
+      - name: Gerar Relatório Visual dos Testes
+        uses: dorny/test-reporter@v1
+        if: always() # Sempre executa para capturar falhas
+        with:
+          name: Relatório do Mocha # Nome que vai aparecer no painel
+          path: test-results.xml    # Caminho do arquivo que o mocha gerou
+          reporter: java-junit      # O formato que a action vai ler
