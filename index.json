@@ -5,8 +5,8 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-18T21:26:37.463Z",
-    "end": "2026-06-18T21:26:37.467Z",
+    "start": "2026-06-18T21:35:25.485Z",
+    "end": "2026-06-18T21:35:25.489Z",
     "duration": 4,
     "testsRegistered": 3,
     "passPercent": 100,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "c8acde1f-beb2-489f-8b15-0caf9a7b65bf",
+      "uuid": "8d85b2fc-b546-4dd9-a62d-bfe559d30d32",
       "title": "",
       "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
       "file": "/test/pagamentos.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "94879198-5fc6-4f99-b3d5-f3dcb432dc9c",
+          "uuid": "74256dfe-75c1-40b9-a3d0-011f1fb8a11b",
           "title": "Teste de serviço de pagamento",
           "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
           "file": "/test/pagamentos.test.js",
@@ -38,7 +38,7 @@
               "title": "Deve registrar um pagamento com categoria padrão com valor até 100",
               "fullTitle": "Teste de serviço de pagamento Deve registrar um pagamento com categoria padrão com valor até 100",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Samar\", 100);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Samar\");\nassert.equal(retornoPagamento.valor, 100);\nassert.equal(retornoPagamento.categoria, \"padrão\");",
               "err": {},
-              "uuid": "74e01666-04db-46d0-91a9-803a9bc2dc89",
-              "parentUUID": "94879198-5fc6-4f99-b3d5-f3dcb432dc9c",
+              "uuid": "f4783523-4236-4e9e-941b-6c794495bf58",
+              "parentUUID": "74256dfe-75c1-40b9-a3d0-011f1fb8a11b",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 101);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 101);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "ce3a6e93-a51f-4c4b-b6fd-8b687e9919da",
-              "parentUUID": "94879198-5fc6-4f99-b3d5-f3dcb432dc9c",
+              "uuid": "fc294c17-7271-4f50-b3b0-48f384da99b8",
+              "parentUUID": "74256dfe-75c1-40b9-a3d0-011f1fb8a11b",
               "isHook": false,
               "skipped": false
             },
@@ -83,22 +83,22 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0198-7654-3210\", \"Petrobras\", 1);\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 1001);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 1001);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "a5a936f1-fa70-4132-90d4-51d0dbb4214e",
-              "parentUUID": "94879198-5fc6-4f99-b3d5-f3dcb432dc9c",
+              "uuid": "942b1d0c-ae54-49a9-8485-8a06dccf49f2",
+              "parentUUID": "74256dfe-75c1-40b9-a3d0-011f1fb8a11b",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "74e01666-04db-46d0-91a9-803a9bc2dc89",
-            "ce3a6e93-a51f-4c4b-b6fd-8b687e9919da",
-            "a5a936f1-fa70-4132-90d4-51d0dbb4214e"
+            "f4783523-4236-4e9e-941b-6c794495bf58",
+            "fc294c17-7271-4f50-b3b0-48f384da99b8",
+            "942b1d0c-ae54-49a9-8485-8a06dccf49f2"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 0,
+          "duration": 1,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
