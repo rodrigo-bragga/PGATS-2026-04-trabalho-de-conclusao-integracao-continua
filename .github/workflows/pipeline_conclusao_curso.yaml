@@ -12,7 +12,7 @@ on:
   
 # Por agendado
   schedule:
-    - cron: '36 21 * * *' # Executa às 21:40 UTC (18:40 no horário de Brasília)
+    - cron: '36 21 * * *' # Executa às 21:36 UTC (18:36 no horário de Brasília)
 
 # Tarefas dentro da pipeline
 jobs:
