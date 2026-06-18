@@ -19,14 +19,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Executando testes do Mocha
-        run: npm run test:ci
-        if: always() # Garante que o passo rode mesmo se o teste falhar
+    - name: Executando testes com Mochawesome
+        run: npm run test:report
+        if: always() # Garante que vai rodar mesmo se algum teste falhar
 
-      - name: Gerar Relatório Visual dos Testes
-        uses: dorny/test-reporter@v1
-        if: always() # Sempre executa para capturar falhas
-        with:
-          name: Relatório do Mocha # Nome que vai aparecer no painel
-          path: test-results.xml    # Caminho do arquivo que o mocha gerou
-          reporter: java-junit      # O formato que a action vai ler
+      # Salva o HTML do Mochawesome para você baixar direto pelo painel do GitHub
+    - name: Salvar Relatório HTML do Mochawesome
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: relatorio-mochawesome
+        path: mochawesome-report/ # Caminho da pasta que configuramos no package.json
+        retention-days: 7
