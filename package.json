@@ -1,0 +1,24 @@
+{
+  "name": "pgats-2026-03-trabalho-de-conclusao-programacao-para-automacao",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rodrigo-bragga/PGATS-2026-03-trabalho-de-conclusao-programacao-para-automacao.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/rodrigo-bragga/PGATS-2026-03-trabalho-de-conclusao-programacao-para-automacao/issues"
+  },
+  "homepage": "https://github.com/rodrigo-bragga/PGATS-2026-03-trabalho-de-conclusao-programacao-para-automacao#readme",
+  "dependencies": {
+    "mocha": "^11.7.6"
+  }
+}
