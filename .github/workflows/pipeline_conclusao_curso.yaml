@@ -1,4 +1,5 @@
-# Nome da pipeline (Sem espaços no início da linha)
+
+# Nome da pipeline
 name: "Pipeline de Conclusao do Curso"
 
 # Gatilhos de disparo ajustados corretamente
@@ -16,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
-      # 1. CRUCIAL: Baixa o seu código para dentro da máquina virtual
+      # 1. Baixa o código para dentro da máquina virtual
       - name: Checkout do repositório
         uses: actions/checkout@v4
 
@@ -30,7 +31,7 @@ jobs:
       - name: Instalar Dependências
         run: npm ci
 
-      # 4. Executa os testes (Ajustado o alinhamento do "run" e "if")
+      # 4. Executa os testes 
       - name: Executando testes com Mochawesome
         run: npm run test:report
         if: always()
@@ -43,3 +44,11 @@ jobs:
           name: relatorio-mochawesome
           path: mochawesome-report/
           retention-days: 7
+
+      # 6. Publica a pasta do relatório na internet
+      - name: Publicar Relatório Online no GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@v4
+        if: always() # Garante que atualiza a página mesmo se o teste falhar
+        with:
+          folder: mochawesome-report # Pasta que a action vai subir
+          branch: gh-pages # Branch onde a página vai morar
