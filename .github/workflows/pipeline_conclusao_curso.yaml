@@ -2,14 +2,17 @@
 # Nome da pipeline
 name: "Pipeline de Conclusao do Curso"
 
-# Gatilhos de disparo ajustados corretamente
+# Gatilhos - Execução por push
 on:
   push:
     branches:
       - main
+# Por manual 
   workflow_dispatch:
+  
+# Por agendado
   schedule:
-    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite (UTC)
+    - cron: '36 21 * * *' # Executa às 21:40 UTC (18:40 no horário de Brasília)
 
 # Tarefas dentro da pipeline
 jobs:
