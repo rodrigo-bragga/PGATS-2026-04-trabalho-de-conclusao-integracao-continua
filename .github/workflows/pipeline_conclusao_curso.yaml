@@ -1,33 +1,45 @@
-# Nome da pipeline
-name: Pipeline de Conclusao do Curso
+# Nome da pipeline (Sem espaços no início da linha)
+name: "Pipeline de Conclusao do Curso"
 
-# Gatilhos - Execução por push
+# Gatilhos de disparo ajustados corretamente
 on:
   push:
     branches:
       - main
-
-# Manual
   workflow_dispatch:
-
-# Agendado
   schedule:
-    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite
+    - cron: '0 0 * * 0' # Executa todo domingo à meia-noite (UTC)
 
-#tarefas dentro da pipeline = jobs
+# Tarefas dentro da pipeline
 jobs:
   test:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Executando testes com Mochawesome
-        run: npm run test:report
-        if: always() # Garante que vai rodar mesmo se algum teste falhar
+      # 1. CRUCIAL: Baixa o seu código para dentro da máquina virtual
+      - name: Checkout do repositório
+        uses: actions/checkout@v4
 
-      # Salva o HTML do Mochawesome para você baixar direto pelo painel do GitHub
-    - name: Salvar Relatório HTML do Mochawesome
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: relatorio-mochawesome
-        path: mochawesome-report/ # Caminho da pasta que configuramos no package.json
-        retention-days: 7
+      # 2. Instala e configura o ambiente do Node.js
+      - name: Configuração do Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 24.x
+
+      # 3. Instala as dependências (incluindo mocha e mochawesome)
+      - name: Instalar Dependências
+        run: npm ci
+
+      # 4. Executa os testes (Ajustado o alinhamento do "run" e "if")
+      - name: Executando testes com Mochawesome
+        run: npm run test:report
+        if: always()
+
+      # 5. Salva o HTML do Mochawesome
+      - name: Salvar Relatório HTML do Mochawesome
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: relatorio-mochawesome
+          path: mochawesome-report/
+          retention-days: 7
