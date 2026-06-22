@@ -5,9 +5,9 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-06-21T22:45:49.566Z",
-    "end": "2026-06-21T22:45:49.570Z",
-    "duration": 4,
+    "start": "2026-06-22T23:04:18.226Z",
+    "end": "2026-06-22T23:04:18.231Z",
+    "duration": 5,
     "testsRegistered": 3,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "830f69ee-8c16-4999-8abc-421d9cb89710",
+      "uuid": "37655bf3-14f4-43c6-a27d-7c7a56bafa58",
       "title": "",
       "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
       "file": "/test/pagamentos.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "046df49c-d855-4a59-a5af-414ca5a73e81",
+          "uuid": "f72197e3-fcdb-4348-abb0-6da48e2c3437",
           "title": "Teste de serviço de pagamento",
           "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
           "file": "/test/pagamentos.test.js",
@@ -38,7 +38,7 @@
               "title": "Deve registrar um pagamento com categoria padrão com valor até 100",
               "fullTitle": "Teste de serviço de pagamento Deve registrar um pagamento com categoria padrão com valor até 100",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Samar\", 100);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Samar\");\nassert.equal(retornoPagamento.valor, 100);\nassert.equal(retornoPagamento.categoria, \"padrão\");",
               "err": {},
-              "uuid": "91bda971-092b-4317-a4b9-15ba0fdb761a",
-              "parentUUID": "046df49c-d855-4a59-a5af-414ca5a73e81",
+              "uuid": "7da736b1-4dd1-41b7-8ca9-75d0774235af",
+              "parentUUID": "f72197e3-fcdb-4348-abb0-6da48e2c3437",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 101);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 101);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "80c1f978-85bd-44d4-9569-25076de15a44",
-              "parentUUID": "046df49c-d855-4a59-a5af-414ca5a73e81",
+              "uuid": "9e38d22c-c733-48e1-b080-7aec40e9b5e2",
+              "parentUUID": "f72197e3-fcdb-4348-abb0-6da48e2c3437",
               "isHook": false,
               "skipped": false
             },
@@ -74,7 +74,7 @@
               "title": "Deve mostrar último registro de pagamento",
               "fullTitle": "Teste de serviço de pagamento Deve mostrar último registro de pagamento",
               "timedOut": false,
-              "duration": 0,
+              "duration": 1,
               "state": "passed",
               "speed": "fast",
               "pass": true,
@@ -83,22 +83,22 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0198-7654-3210\", \"Petrobras\", 1);\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 1001);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 1001);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "4c565fb7-8447-4578-83ee-5e75ec87cad5",
-              "parentUUID": "046df49c-d855-4a59-a5af-414ca5a73e81",
+              "uuid": "a04636ee-27de-473a-87c6-be11e8eaa323",
+              "parentUUID": "f72197e3-fcdb-4348-abb0-6da48e2c3437",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "91bda971-092b-4317-a4b9-15ba0fdb761a",
-            "80c1f978-85bd-44d4-9569-25076de15a44",
-            "4c565fb7-8447-4578-83ee-5e75ec87cad5"
+            "7da736b1-4dd1-41b7-8ca9-75d0774235af",
+            "9e38d22c-c733-48e1-b080-7aec40e9b5e2",
+            "a04636ee-27de-473a-87c6-be11e8eaa323"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 0,
+          "duration": 2,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
