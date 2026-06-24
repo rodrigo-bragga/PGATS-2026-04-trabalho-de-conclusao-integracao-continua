@@ -12,8 +12,8 @@ on:
   
 # Por agendado
   schedule:
-    - cron: '36 21 * * *' # Executa às 21:36 UTC (18:36 no horário de Brasília)
-
+    - cron: '0 6 * * 0' # Executa todo DOMINGO às 06:00 UTC (03:00 no horário de Brasília)
+    
 # Tarefas dentro da pipeline
 jobs:
   test:
