@@ -5,8 +5,8 @@
     "passes": 3,
     "pending": 0,
     "failures": 0,
-    "start": "2026-09-06T10:13:02.629Z",
-    "end": "2026-09-06T10:13:02.633Z",
+    "start": "2026-09-13T11:02:35.446Z",
+    "end": "2026-09-13T11:02:35.450Z",
     "duration": 4,
     "testsRegistered": 3,
     "passPercent": 100,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "50ef0307-5ccf-457b-b09e-3fe28151ecb3",
+      "uuid": "4b54604b-7c0d-4b72-91be-55ef8c3005e2",
       "title": "",
       "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
       "file": "/test/pagamentos.test.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "0c5565f6-96a9-496a-a182-947dce8ebe70",
+          "uuid": "5a36cf18-825a-4777-b378-a92f45eb4f09",
           "title": "Teste de serviço de pagamento",
           "fullFile": "/home/runner/work/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/PGATS-2026-04-trabalho-de-conclusao-integracao-continua/test/pagamentos.test.js",
           "file": "/test/pagamentos.test.js",
@@ -47,8 +47,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Samar\", 100);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Samar\");\nassert.equal(retornoPagamento.valor, 100);\nassert.equal(retornoPagamento.categoria, \"padrão\");",
               "err": {},
-              "uuid": "11852bfb-8499-49d9-8d90-a4d516dd4b53",
-              "parentUUID": "0c5565f6-96a9-496a-a182-947dce8ebe70",
+              "uuid": "53b79392-5386-4beb-bf32-02553e21685e",
+              "parentUUID": "5a36cf18-825a-4777-b378-a92f45eb4f09",
               "isHook": false,
               "skipped": false
             },
@@ -65,8 +65,8 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 101);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 101);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "83027d99-0a38-4cc8-abab-d12f2ef9dd07",
-              "parentUUID": "0c5565f6-96a9-496a-a182-947dce8ebe70",
+              "uuid": "242e48fa-d035-4742-ad85-a981c494f578",
+              "parentUUID": "5a36cf18-825a-4777-b378-a92f45eb4f09",
               "isHook": false,
               "skipped": false
             },
@@ -83,17 +83,17 @@
               "context": null,
               "code": "const servicoDePagamento = new ServicoDePagamento();\nservicoDePagamento.pagar(\"0198-7654-3210\", \"Petrobras\", 1);\nservicoDePagamento.pagar(\"0123-4567-8910\", \"Intelbras\", 1001);\nconst retornoPagamento = servicoDePagamento.ultimoPagamento();\nassert.equal(retornoPagamento.codigoBarras, \"0123-4567-8910\");\nassert.equal(retornoPagamento.empresa, \"Intelbras\");\nassert.equal(retornoPagamento.valor, 1001);\nassert.equal(retornoPagamento.categoria, \"cara\");",
               "err": {},
-              "uuid": "f10f8864-5c78-4237-8855-c912473c94dc",
-              "parentUUID": "0c5565f6-96a9-496a-a182-947dce8ebe70",
+              "uuid": "b9e8c1c1-1e3e-4f9a-9397-edfb70a1f8f3",
+              "parentUUID": "5a36cf18-825a-4777-b378-a92f45eb4f09",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "11852bfb-8499-49d9-8d90-a4d516dd4b53",
-            "83027d99-0a38-4cc8-abab-d12f2ef9dd07",
-            "f10f8864-5c78-4237-8855-c912473c94dc"
+            "53b79392-5386-4beb-bf32-02553e21685e",
+            "242e48fa-d035-4742-ad85-a981c494f578",
+            "b9e8c1c1-1e3e-4f9a-9397-edfb70a1f8f3"
           ],
           "failures": [],
           "pending": [],
